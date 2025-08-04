@@ -10,7 +10,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
-from langchain.callbacks.base import BaseCallbackHandl
+from langchain.callbacks.base import BaseCallbackHandler
 
 # Load environment variables
 load_dotenv()
@@ -121,4 +121,5 @@ if user_input:
 # Show chat history
 for sender, msg in st.session_state.chat_history:
     st.chat_message(sender).markdown(msg)
+
 
