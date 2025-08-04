@@ -2,18 +2,18 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from datasets import load_dataset
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
-from langchain.callbacks.base import BaseCallbackHandler
+from langchain.callbacks.base import BaseCallbackHandl
 
 # Load environment variables
-load_dotenv("open_ai.env")
+load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 os.environ["OPENAI_API_KEY"] = api_key
 os.environ["OPENAI_API_BASE"] = "https://api.groq.com/openai/v1"
@@ -121,3 +121,4 @@ if user_input:
 # Show chat history
 for sender, msg in st.session_state.chat_history:
     st.chat_message(sender).markdown(msg)
+
