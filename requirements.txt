@@ -2,8 +2,10 @@ streamlit
 python-dotenv
 datasets
 langchain
+langchain-openai
 openai
 faiss-cpu
 transformers
 sentence-transformers
 torch
+
